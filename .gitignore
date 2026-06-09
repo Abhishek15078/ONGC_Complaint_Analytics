@@ -1,0 +1,22 @@
+# Virtual Environment
+venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+
+# Trained Models
+*.pkl
+
+# Raw Data
+data/raw/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
