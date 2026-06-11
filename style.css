@@ -182,3 +182,89 @@ button:hover{
 
     border-radius:50%;
 }
+.header{
+
+    background:#003B7A;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 30px;
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+}
+
+.header-text h1{
+
+    margin:0;
+
+    font-size:32px;
+}
+
+.header-text p{
+
+    margin-top:8px;
+
+    font-size:16px;
+
+    opacity:0.9;
+}
+
+.logo{
+
+    width:90px;
+
+    background:white;
+
+    padding:6px;
+
+    border-radius:10px;
+}
+
+#dashboardBtn{
+
+    background:#6f42c1;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:0.3s;
+}
+
+#dashboardBtn:hover{
+
+    transform:scale(1.05);
+}
+
+@media(max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+    }
+
+    .logo{
+
+        width:70px;
+    }
+}
