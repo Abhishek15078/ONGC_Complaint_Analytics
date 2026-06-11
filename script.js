@@ -153,3 +153,16 @@ async function analyzeComplaint() {
             `;
     }
 }
+document
+.getElementById("dashboardBtn")
+.addEventListener(
+    "click",
+    function(){
+
+        window.open(
+            "https://app.powerbi.com/groups/me/reports/414e4b06-74a5-41a1-b229-69dfa6009f85/042c66563d0b7a85d830?experience=power-bi",
+            "_blank"
+        );
+
+    }
+);
