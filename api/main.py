@@ -32,7 +32,6 @@ def predict_all(
     request: ComplaintRequest
 ):
 
-    # Validation
     if len(request.text.strip()) < 5:
 
         raise HTTPException(
@@ -40,7 +39,6 @@ def predict_all(
             detail="Complaint too short"
         )
 
-    # Create text exactly like training data
     combined_text = (
         request.text
         + " "
@@ -51,25 +49,45 @@ def predict_all(
         + request.software
     )
 
-    # Convert text to TF-IDF vector
     vector = tfidf.transform(
         [combined_text]
     )
 
-    # Priority Prediction
+    # Priority
     priority = priority_model.predict(
         vector
     )[0]
 
-    # SLA Prediction
-    sla = sla_model.predict(
-        vector
-    )[0]
-
-    # Resolution Time Prediction
+    # Resolution Time
     resolution = resolution_model.predict(
         vector
     )[0]
+
+    # SLA Rule Engine
+
+    if priority == "Critical":
+
+        sla_limit = 24
+
+    elif priority == "High":
+
+        sla_limit = 48
+
+    elif priority == "Medium":
+
+        sla_limit = 72
+
+    else:
+
+        sla_limit = 96
+
+    if resolution <= sla_limit:
+
+        sla = "Within SLA"
+
+    else:
+
+        sla = "SLA Breached"
 
     return {
 
