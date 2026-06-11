@@ -32,7 +32,7 @@ async function analyzeComplaint() {
 
         const response =
             await fetch(
-                "http://127.0.0.1:8000/predict-all",
+                "https://ongc-complaint-api.onrender.com/predict-all",
                 {
                     method: "POST",
 
