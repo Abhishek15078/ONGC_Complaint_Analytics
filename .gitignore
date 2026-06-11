@@ -11,9 +11,6 @@ __pycache__/
 # Environment Variables
 .env
 
-# Trained Models
-*.pkl
-
 # Raw Data
 data/raw/
 
