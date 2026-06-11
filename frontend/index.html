@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONGC Complaint Analytics Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>ONGC Complaint Analytics Portal</h1>
+        <p>AI-Powered Complaint Prioritization & SLA Prediction</p>
+    </div>
+
+    <div class="container">
+
+        <div class="form-card">
+
+            <h2>Submit Complaint</h2>
+
+            <textarea
+                id="complaint"
+                placeholder="Describe your issue..."></textarea>
+
+            <input
+                type="text"
+                id="department"
+                placeholder="Department">
+
+            <input
+                type="text"
+                id="group"
+                placeholder="Group">
+
+            <input
+                type="text"
+                id="software"
+                placeholder="Software Name">
+
+            <select id="hw_flag">
+                <option value="0">Software Issue</option>
+                <option value="1">Hardware Issue</option>
+            </select>
+
+            <button onclick="analyzeComplaint()">
+                Analyze Complaint
+            </button>
+
+        </div>
+
+        <div id="loading" class="loading">
+            Analyzing Complaint...
+        </div>
+
+        <div id="results"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

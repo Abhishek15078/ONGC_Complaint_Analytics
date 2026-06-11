@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 
 from api.schemas import ComplaintRequest
+from fastapi.middleware.cors import CORSMiddleware
 
 from api.model_loader import (
     priority_model,
@@ -11,7 +12,13 @@ from api.model_loader import (
 
 app = FastAPI()
 
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 @app.get("/")
 def home():
 
